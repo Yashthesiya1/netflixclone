@@ -156,6 +156,24 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="./login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@vercel/analytics"></script>
+    <script>
+    // Initialize Vercel Analytics
+    VercelAnalytics.init();
+
+    // Function to track page views
+    function trackPageView(url) {
+        VercelAnalytics.trackPageView(url);
+    }
+
+    // Example usage:
+    window.addEventListener('popstate', function(event) {
+        trackPageView(window.location.pathname);
+    });
+
+    // Call this function on page load
+    trackPageView(window.location.pathname);
+</script>
 </body>
 
 </html>
